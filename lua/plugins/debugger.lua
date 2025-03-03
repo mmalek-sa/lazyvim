@@ -1,0 +1,49 @@
+-- return {
+-- 	{
+-- 		"mfussenegger/nvim-dap",
+-- 		dependencies = {
+-- 			"rcarriga/nvim-dap-ui",
+-- 			{
+-- 				"theHamsta/nvim-dap-virtual-text",
+-- 				opts = {},
+-- 			},
+-- 			"suketa/nvim-dap-ruby",
+-- 		},
+-- 		config = function()
+-- 			local dap = require("dap")
+-- 			require("dap-ruby").setup()
+--
+-- 			local function extend_run_config(config)
+-- 				return vim.tbl_extend("force", {
+-- 					type = "ruby",
+-- 					request = "attach",
+-- 					waiting = 1000,
+-- 					random_port = true,
+-- 				}, config)
+-- 			end
+--
+-- 			local minitest_configs = {
+-- 				extend_run_config({ name = "run rails test", command = "bundle", args = { "exec", "rails", "test" } }),
+-- 				extend_run_config({
+-- 					name = "run rails test current file",
+-- 					command = "bundle",
+-- 					args = { "exec", "rails", "test" },
+-- 					current_file = true,
+-- 				}),
+-- 				extend_run_config({
+-- 					name = "run rails test current_file:current_line",
+-- 					command = "bundle",
+-- 					args = { "exec", "rails", "test" },
+-- 					current_line = true,
+-- 				}),
+-- 			}
+--
+-- 			-- Add Minitest configurations to dap-ruby
+-- 			for _, config in ipairs(minitest_configs) do
+-- 				table.insert(dap.configurations.ruby, config)
+-- 			end
+-- 		end,
+-- 	},
+-- }
+--
+return {}
