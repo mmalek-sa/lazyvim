@@ -4,11 +4,7 @@ return {
 	dependencies = {
 		"zidhuss/neotest-minitest",
 	},
-	config = function()
-		require("neotest").setup({
-			adapters = {
-				require("neotest-minitest"),
-			},
-		})
-	end,
+	opts = {
+		adapters = { "neotest-minitest" },
+	},
 }
